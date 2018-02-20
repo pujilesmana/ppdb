@@ -62,21 +62,22 @@
 				                    <form role="form" action="" method="post" class="login-form">
 				                    	<div class="form-group">
 				                    		<label class="sr-only" for="nisn">NISN</label>
-				                        	<input type="text" name="form-username" placeholder="Nisn..." class="form-username form-control" id="form-username">
+				                        	<input type="text" name="form-nisn" placeholder="Nisn..." class="form-nisn form-control" id="form-nisn">
 				                        </div>
 				                        <div class="form-group">
-				                        	<label class="sr-only" for="form-email">Email</label>
-				                        	<input type="text" name="form-email" placeholder="Email..." class="form-email form-control" id="form-email">
+				                        	<label class="sr-only" for="nama">Nama</label>
+				                        	<input type="text" name="form-nisn" placeholder="Nama Lengkap..." class="form-nisn form-control" id="form-nisn">
 				                        </div>
                                         <div class="form-group">
-                                            <label class="sr-only" for="form-password">Password</label>
+                                            <label class="sr-only" for="password">Password</label>
                                             <input type="password" name="form-password" placeholder="Password..." class="form-password form-control" id="form-password">
                                         </div>
                                         <div class="form-group">
-                                            <label class="sr-only" for="form-asaldaerah">Asal Daerah</label>
-                                            <input type="text" name="form-asaldaerah" placeholder="Asal Daerah..." class="form-asaldaerah form-control" id="form-asaldaerah">
+                                            <label class="sr-only" for="conf-pass">Confirm Password</label>
+                                            <input type="text" name="conf-pass" placeholder="Confirm Password..." class="conf-pass form-control" id="conf-pass">
                                         </div>
 				                        <button type="submit" class="btn">Sign Up</button>
+                                        <p >Sudah punya Akun ?<a href="<?php echo base_url()?>"><strong> Login  </strong></a></p>
 				                    </form>
 			                    </div>
 		                    </div>
