@@ -14,7 +14,6 @@
         <link rel="stylesheet" href="<?php echo base_url()?>assets/font-awesome/css/font-awesome.min.css">
 		<link rel="stylesheet" href="<?php echo base_url()?>assets/css/form-elements.css">
         <link rel="stylesheet" href="<?php echo base_url()?>assets/css/style.css">
-
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -60,7 +59,7 @@
 	                        		</div>
 	                            </div>
 	                            <div class="form-bottom">
-				                    <form role="form" action="" method="post" class="login-form">
+				                    <form role="form" action="" method="post" class="login-form" id="form-login">
 				                    	<div class="form-group">
 				                    		<label class="sr-only" for="nisn">NISN</label>
 				                        	<input type="text" name="form-username" placeholder="NISN" class="form-username form-control" id="form-username">
@@ -82,18 +81,43 @@
             
         </div>
 
-      
-        <!-- Javascript -->
-        <script src="<?php echo base_url()?>assets/js/jquery-1.11.1.min.js"></script>
-        <script src="<?php echo base_url()?>assets/bootstrap/js/bootstrap.min.js"></script>
-        <script src="<?php echo base_url()?>assets/js/jquery.backstretch.min.js"></script>
-        <script src="<?php echo base_url()?>assets/js/scripts.js"></script>
-        <script src="<?php echo base_url()?>assets/js/codeseven/toastr.min.css"></script>
-        
-        <!--[if lt IE 10]>
-            <script src="assets/js/placeholder.js"></script>
-        <![endif]-->
-
     </body>
 
 </html>
+<script src="<?php echo base_url()?>assets/js/jquery-1.11.1.min.js"></script>
+<script src="<?php echo base_url()?>assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="<?php echo base_url()?>assets/js/jquery.backstretch.min.js"></script>
+<script src="<?php echo base_url()?>assets/js/scripts.js"></script>
+
+
+<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/codeseven/toastr.css" />
+<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/codeseven/toastr.min.css" />
+<script src="<?php echo base_url(); ?>assets/js/codeseven/toastr.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/codeseven/toastr.js"></script>  
+
+<script type="text/javascript">
+    toastr.options.preventDuplicates = true;
+    toastr.options.timeOut = 500;
+
+    $(document).ready(function(){
+        $("#form-login").on('submit',function(e){
+            e.preventDefault();
+            $.ajax({
+                type : "post",
+                url  : "<?php echo site_url()?>Main/1",
+                data : $('#form-login').serialize(),
+                beforeSubmit : function(data){ },
+                success      : function(data)
+                {
+                    if(data == 0){
+                        toastr.error("username dan password tidak ditemukan","MAAF");
+                    }
+                    else if(data == 1){
+                        toastr.success("Selamat datang di website PPDB","Berhasil");
+                    }
+                },
+                error : function(data){}
+            })
+        })
+    });
+</script>
