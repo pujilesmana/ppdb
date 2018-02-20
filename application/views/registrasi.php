@@ -77,7 +77,7 @@
                                             <input type="text" name="conf-pass" placeholder="Confirm Password..." class="conf-pass form-control" id="conf-pass">
                                         </div>
 				                        <button type="submit" class="btn">Sign Up</button>
-                                        <p >Sudah punya Akun ?<a href="<?php echo base_url()?>"><strong> Login  </strong></a></p>
+                                        <p >Sudah punya Akun ?<a href="<?= base_url('Main/login')?>"><strong> Login  </strong></a></p>
 				                    </form>
 			                    </div>
 		                    </div>
