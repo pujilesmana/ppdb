@@ -70,7 +70,7 @@
 				                        	<input type="password" name="form-password" placeholder="Password..." class="form-password form-control" id="form-password">
 				                        </div>
 				                        <button type="submit" class="btn">Login</button>
-                                        <p >Belum Mempunyai coba ?<a href="<?php echo base_url()?>Main/register"><strong> Daftar  </strong></a></p>
+                                        <p >Belum Mempunyai Akun ?<a href="<?php echo base_url()?>Main/register"><strong> Daftar  </strong></a></p>
 				                    </form>
 			                    </div>
 		                    </div>
