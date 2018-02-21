@@ -59,14 +59,14 @@
 	                        		</div>
 	                            </div>
 	                            <div class="form-bottom">
-				                    <form role="form" action="" method="post" class="login-form" id="form-login">
+				                    <form role="form" class="login-form" id="form-login">
 				                    	<div class="form-group">
 				                    		<label class="sr-only" for="nisn">NISN</label>
-				                        	<input type="text" name="form-username" placeholder="NISN" class="form-username form-control" id="form-username">
+				                        	<input type="text" name="nisn" placeholder="NISN" class="form-control">
 				                        </div>
 				                        <div class="form-group">
-				                        	<label class="sr-only" for="form-password">Password</label>
-				                        	<input type="password" name="form-password" placeholder="Password..." class="form-password form-control" id="form-password">
+				                        	<label class="sr-only" for="password">Password</label>
+				                        	<input type="password" name="pass" placeholder="Password..." class="form-control">
 				                        </div>
 				                        <button type="submit" class="btn">Login</button>
                                         <p >Belum Mempunyai Akun ?<a href="<?php echo base_url()?>Main/register"><strong> Daftar  </strong></a></p>
@@ -113,7 +113,8 @@
                         toastr.error("username dan password tidak ditemukan","MAAF");
                     }
                     else if(data == 1){
-                        toastr.success("Selamat datang di website PPDB","Berhasil");
+                        // toastr.success("Selamat datang di website PPDB","Berhasil");
+                        window.location.href = "<?php echo site_url()?>User";
                     }
                 },
                 error : function(data){}
