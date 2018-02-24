@@ -66,7 +66,7 @@
 				                        </div>
 				                        <div class="form-group">
 				                        	<label class="sr-only" for="password">Password</label>
-				                        	<input type="password" name="pass" placeholder="Password..." class="form-control">
+				                        	<input type="password" name="pass" placeholder="Password" class="form-control">
 				                        </div>
 				                        <button type="submit" class="btn">Login</button>
                                         <p >Belum Mempunyai Akun ?<a href="<?php echo base_url()?>Main/2"><strong> Daftar  </strong></a></p>
