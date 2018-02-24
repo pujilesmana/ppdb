@@ -48,5 +48,11 @@
        		$query = $this->db->query($sql,array($new,$usr));
        		return $query;
     	}
+
+      public function insert($row,$value){
+        $sql = "INSERT INTO account(".$row.") VALUES(".$value.")";
+        $query = $this->db->query($sql);
+        return $query;
+      }
 	}
 ?>

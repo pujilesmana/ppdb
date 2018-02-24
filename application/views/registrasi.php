@@ -58,25 +58,28 @@
 	                        			<i class="fa fa-lock"></i>
 	                        		</div>
 	                            </div>
+                                <div>
+                                     <?= $this->session->flashdata('msg'); ?>
+                                </div>
 	                            <div class="form-bottom">
-				                    <form role="form" action="" method="post" class="login-form">
+				                    <form role="form" action="" method="post" class="register-form" id="register">
 				                    	<div class="form-group">
 				                    		<label class="sr-only" for="nisn">NISN</label>
-				                        	<input type="text" name="form-nisn" placeholder="Nisn..." class="form-nisn form-control" id="form-nisn">
+				                        	<input type="text" name="nisn" placeholder="Nisn" class="form-nisn form-control" required>
 				                        </div>
 				                        <div class="form-group">
 				                        	<label class="sr-only" for="nama">Nama</label>
-				                        	<input type="text" name="form-nisn" placeholder="Nama Lengkap..." class="form-nisn form-control" id="form-nisn">
+				                        	<input type="text" name="nama" placeholder="Nama Lengkap" class="form-nisn form-control" required>
 				                        </div>
                                         <div class="form-group">
                                             <label class="sr-only" for="password">Password</label>
-                                            <input type="password" name="form-password" placeholder="Password..." class="form-password form-control" id="form-password">
+                                            <input type="password" name="password" placeholder="Password" class="form-password form-control" required>
                                         </div>
                                         <div class="form-group">
                                             <label class="sr-only" for="conf-pass">Confirm Password</label>
-                                            <input type="text" name="conf-pass" placeholder="Confirm Password..." class="conf-pass form-control" id="conf-pass">
+                                            <input type="password" name="confirm-password" placeholder="Confirm Password" class="conf-pass form-control" required>
                                         </div>
-				                        <button type="submit" class="btn">Sign Up</button>
+				                        <button type="submit" class="btn" name="b_register">Sign Up</button>
                                         <p >Sudah punya Akun ?<a href="<?php echo base_url()?>"><strong> Login  </strong></a></p>
 				                    </form>
 			                    </div>
@@ -100,6 +103,43 @@
             <script src="assets/js/placeholder.js"></script>
         <![endif]-->
 
+        <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/codeseven/toastr.css" />
+        <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/codeseven/toastr.min.css" />
+        <script src="<?php echo base_url(); ?>assets/js/codeseven/toastr.min.js"></script>
+        <script src="<?php echo base_url(); ?>assets/js/codeseven/toastr.js"></script>
+
     </body>
 
 </html>
+
+<script type="text/javascript">
+    toastr.options.preventDuplicates = true;
+    toastr.options.timeOut = 500;
+
+    $(document).ready(function(){
+        $("#register").on('submit',function(e){
+            e.preventDefault();
+            $.ajax({
+                type : "post",
+                url : "<?php echo site_url()?>Main/3",
+                data : $('#register').serialize(),
+                beforeSubmit : function(data){ },
+                success : function(data)
+                {
+                    if(data == 0){
+                        toastr.error("NISN telah ada","MAAF")
+                    }
+                    else if(data == 1){
+                        toastr.success("Silahkan Login","BERHASIL");
+                        window.location.href = "<?php echo base_url()?>Main/2";
+                    }
+                    else if(data == 2){
+                        toastr.error("Password tidak sama","MAAF");
+                    }
+
+                },
+                error : function(data){}
+            })
+        })
+    });
+</script>
