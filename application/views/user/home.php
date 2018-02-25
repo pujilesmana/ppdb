@@ -1,3 +1,126 @@
-<?php
-	echo "puji";
-?>
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>PPDB - Home</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="<?php echo base_url()?>assets/freelancer/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="<?php echo base_url()?>assets/freelancer/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="<?php echo base_url()?>assets/freelancer/css/font1.css" rel="stylesheet" type="text/css">
+    <link href="<?php echo base_url()?>assets/freelancer/css/font2.css" rel="stylesheet" type="text/css">
+
+    <!-- Plugin CSS -->
+    <link href="<?php echo base_url()?>assets/freelancer/vendor/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css">
+
+    <!-- Custom styles for this template -->
+    <link href="<?php echo base_url()?>assets/freelancer/css/freelancer.min.css" rel="stylesheet">
+
+  </head>
+
+  <body id="page-top">
+
+  	<!-- Navigation -->
+    <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">PPDB</a>
+        <button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">Profile</a>
+            </li>
+            <li class="mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="<?php echo base_url()?>User/1">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Portfolio Grid Section -->
+    <section class="portfolio" id="portfolio">
+      <div class="container">
+        <h2 class="text-center text-uppercase text-secondary mb-0">PPDB Online 2017/2018</h2>
+        <h2 class="text-center text-uppercase text-secondary mb-0">SMA X PALEMBANG</h2>
+        <hr class="star-dark mb-5">
+        <div class="row">
+          <div class="col-md-8 col-lg-3">
+            <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-1">
+              <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
+                <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
+                  <i class="fa fa-search-plus fa-3x"></i>
+                </div>
+              </div>
+              <img class="img-fluid" src="<?php echo base_url()?>assets/freelancer/img/portfolio/cabin.png" alt="">
+            </a>
+          </div>
+          <div class="col-md-2 col-lg-3">
+            <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-2">
+              <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
+                <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
+                  <i class="fa fa-search-plus fa-3x"></i>
+                </div>
+              </div>
+              <img class="img-fluid" src="<?php echo base_url()?>assets/freelancer/img/portfolio/cake.png" alt="">
+            </a>
+          </div>
+          <div class="col-md-2 col-lg-3">
+            <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-3">
+              <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
+                <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
+                  <i class="fa fa-search-plus fa-3x"></i>
+                </div>
+              </div>
+              <img class="img-fluid" src="<?php echo base_url()?>assets/freelancer/img/portfolio/circus.png" alt="">
+            </a>
+          </div>
+          <div class="col-md-2 col-lg-3">
+            <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-4">
+              <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
+                <!-- <div class="portfolio-item-caption-content my-auto w-100 text-center text-white"> -->
+           <!--        <i class="fa fa-search-plus fa-3x"></i> -->
+                <!-- </div> -->
+              </div>
+              <img class="img-fluid" src="<?php echo base_url()?>assets/freelancer/img/portfolio/game.png" alt="">
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+    <div class="scroll-to-top d-lg-none position-fixed ">
+      <a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top">
+        <i class="fa fa-chevron-up"></i>
+      </a>
+    </div>
+    <!-- Bootstrap core JavaScript -->
+    <script src="<?php echo base_url()?>assets/freelancer/vendor/jquery/jquery.min.js"></script>
+    <script src="<?php echo base_url()?>assets/freelancer/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="<?php echo base_url()?>assets/freelancer/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="<?php echo base_url()?>assets/freelancer/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="<?php echo base_url()?>assets/freelancer/js/jqBootstrapValidation.js"></script>
+    <script src="<?php echo base_url()?>assets/freelancer/js/contact_me.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="<?php echo base_url()?>assets/freelancer/js/freelancer.min.js"></script>
+
+  </body>
+
+</html>
