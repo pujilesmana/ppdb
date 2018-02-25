@@ -23,7 +23,21 @@ class Main extends CI_Controller {
 			$this->registerprocess();
 		}
 		else{
-			$this->load->view('login.php');
+			if($this->session->userdata('nisn') != null){
+				echo $this->session->userdata('nisn');
+				if($this->session->userdata('tipe_account') == 1){
+					$this->modelAccount->fillAllData($this->session->userdata('nisn'),$this->session->userdata('username'),$this->session->userdata('tipe_account'));
+
+					redirect("Admin");
+				}
+				else if($this->session->userdata('tipe_account') == 2){
+					$this->modelAccount->fillAllData($this->session->userdata('nisn'),$this->session->userdata('username'),$this->session->userdata('tipe_account'));
+					redirect("User");
+				}
+			}
+			else{
+				$this->load->view('login.php');
+			}
 		}
 	}
 
@@ -45,8 +59,11 @@ class Main extends CI_Controller {
 			$this->session->set_userdata($datasession); //aktif session
 		}
 
-       if($this->Account->readLogin($nisn,$pass) == 1 && $this->session->userdata("tipe_account") == 2){
+       if($this->Account->readLogin($nisn,$pass) == 1 && $this->session->userdata("tipe_account") == 1){
           echo 1;
+       }
+       else if($this->Account->readLogin($nisn,$pass) == 1 && $this->session->userdata("tipe_account") == 2){
+       	echo 2;
        }
 	}
 

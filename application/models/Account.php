@@ -54,5 +54,11 @@
         $query = $this->db->query($sql);
         return $query;
       }
+
+      public function update($set){ //METHOD UPDATE GENERAL
+      $sql = 'UPDATE entri SET '.$set;
+      $query = $this->db->query($sql);
+      return $query; 
+    }
 	}
 ?>

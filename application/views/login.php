@@ -113,6 +113,9 @@
                         toastr.error("username dan password tidak ditemukan","MAAF");
                     }
                     else if(data == 1){
+                        window.location.href = "<?php echo site_url()?>Admin";
+                    }
+                    else if(data == 2){
                         // toastr.success("Selamat datang di website PPDB","Berhasil");
                         window.location.href = "<?php echo site_url()?>User";
                     }
