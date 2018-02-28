@@ -1,50 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Informasi Pendaftaran</title>
-
-	 <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom fonts for this template -->
-    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-
-    <!-- Plugin CSS -->
-    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css">
-
-    <!-- Custom styles for this template -->
-    <link href="css/freelancer.min.css" rel="stylesheet">
-</head>
-<body>
-<section class="portfolio" id="portfolio">
-      <div class="container">
-        <h2 class="text-center text-uppercase text-secondary mb-0">PPDB Online 2017/2018</h2>
-        <h2 class="text-center text-uppercase text-secondary mb-0">SMA X PALEMBANG</h2>
-        <hr class="star-dark mb-5">
-	  </div>  
-</section>
-
-
-    <div class="container">
-
-      <div class="row">
-
-        <div class="col-lg-3">
-
-          <div class="list-group">
-            <a href="#" class="list-group-item" style="background-color: #6BCDFD;">Informasi Pendaftaran</a>
-            <a href="#" class="list-group-item">Data Pribadi</a>
-            <a href="#" class="list-group-item">Data Sekolah</a>
-            <a href="#" class="list-group-item">Data Nilai Rapot</a>
-            <a href="#" class="list-group-item">Data Organisasi</a>
-            <a href="#" class="list-group-item">Data Prestasi</a>
-            <a href="#" class="list-group-item">Data Pribadi Orang Tua</a>
-            <a href="#" class="list-group-item">Data Kesehatan</a>
-          </div>
-
-        </div>
         <!-- /.col-lg-3 -->
 
         <div class="col-lg-9" style="border-color: black">
@@ -73,10 +26,10 @@
               </tr>
               <tr>
                   <td >
-                  <button type="button" class="btn btn-primary" style=" margin-bottom:  200px; margin-top: 55px; margin-right:-100px;">Kembali</button>
+                  <a href="<?php echo base_url();?>User/datapribadi"><button type="button" class="btn btn-primary" style=" margin-bottom:  200px; margin-top: 55px; margin-right:-100px;">Kembali</button></a>
                   </td>
                   <td >
-                  <button type="button" class="btn btn-success" style=" margin-bottom:  200px; margin-top: 55px;margin-left: -60px;">Lanjut</button>
+                  <a href="<?php echo base_url();?>User/dataNilaiRapot"><button type="button" class="btn btn-success" style=" margin-bottom:  200px; margin-top: 55px;margin-left: -60px;">Lanjut</button></a>
                 </td>
               </tr>
               <tr></tr>
@@ -91,6 +44,4 @@
       </div>
       <!-- /.row -->
 
-    </div>
-</body>
-</html>
+    </div>  

@@ -12,7 +12,7 @@ class Main extends CI_Controller {
 
 
 
-	function _remap($action){
+	public function _remap($action){
 		if($action == 1){
 			$this->loginproses();
 		}
