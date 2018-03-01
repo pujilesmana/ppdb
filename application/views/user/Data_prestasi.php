@@ -1,8 +1,5 @@
-        <!-- /.col-lg-3 -->
-
-        <div class="col-lg-9" style="border-color: black">
-
-          <h3>Data Prestasi</h3>
+<div class="col-lg-9" style="border-color: black">
+          <center><h3 style="margin-top: -150px;">Data Prestasi</h3></center>
           <table>
               <tr>
                   <td width="500px" height="50px">Apakah Anda Memiliki Prestasi di luar sekolah?*</td>
@@ -68,10 +65,6 @@
 
 
         </div>
-        <!-- /.col-lg-9 -->
-
 
       </div>
-      <!-- /.row -->
-
     </div>

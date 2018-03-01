@@ -1,6 +1,6 @@
-       <div class="col-lg-9" >
+<div class="col-lg-9" >
 
-          <h3>Data Orang Tua</h3>
+          <center><h3 style="margin-top: -150px;">Data Orang Tua</h3></center>
           <table>
             <h5>Data Ayah</h5>
               <tr>

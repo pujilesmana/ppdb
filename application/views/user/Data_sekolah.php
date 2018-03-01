@@ -1,8 +1,6 @@
-        <!-- /.col-lg-3 -->
-
-        <div class="col-lg-9" style="border-color: black">
-
-          <h3>Data Sekolah</h3>
+<div class="col-lg-9" style="border-color: black">
+          <center>
+          <h3 style="margin-top: -150px;">Data Sekolah</h3></center>
           <table>
               <tr>
                   <td>Asal Sekolah*</td>

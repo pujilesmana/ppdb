@@ -3,7 +3,7 @@
 
       <div class="row">
 
-        <div class="col-lg-3">
+        <div class="col-lg-3" style="margin-top: -105px;">
 
           <div class="list-group">  
             <a href="#" class="list-group-item" style="background-color: #6BCDFD;">Data Pribadi</a>

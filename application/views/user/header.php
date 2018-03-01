@@ -19,9 +19,24 @@
 </head>
 <body>
 <section class="portfolio" id="portfolio">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
       <div class="container">
-        <h2 class="text-center text-uppercase text-secondary mb-0">PPDB Online 2017/2018</h2>
-        <h2 class="text-center text-uppercase text-secondary mb-0">SMA X PALEMBANG</h2>
-        <hr class="star-dark mb-5">
-      </div>  
+        <a class="navbar-brand js-scroll-trigger" href="#page-top" style="margin-left: -150px;">PPDB Online SMA X Palembang</a>
+        <button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">Profile</a>
+            </li>
+            <li class="mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="<?php echo base_url()?>User/1" >Logout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 </section>

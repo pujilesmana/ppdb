@@ -1,8 +1,6 @@
-        <!-- /.col-lg-3 -->
+<div class="col-lg-9" style="border-color: black">
 
-        <div class="col-lg-9" style="border-color: black">
-
-          <h3>Data Nilai Rapot</h3>
+         <center><h3 style="margin-top: -150px;">Data Nilai Rapot</h3></center>
           <table>
             <p>Rapor Semester 1</p>
               <tr>
