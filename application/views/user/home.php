@@ -28,21 +28,21 @@
 
   <body id="page-top">
 
-  	<!-- Navigation -->
+    <!-- Navigation -->
     <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">PPDB</a>
-<!--         <button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top" style="margin-left: -150px;">PPDB Online SMA X Palembang</a>
+        <button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
           <i class="fa fa-bars"></i>
-        </button> -->
+        </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about" style="color :white;">Profile</a>
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">Profile</a>
             </li>
             <li class="mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="<?php echo base_url()?>User/1" style="color :white;">Logout</a>
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="<?php echo base_url()?>User/1" >Logout</a>
             </li>
           </ul>
         </div>
@@ -52,18 +52,16 @@
     <!-- Portfolio Grid Section -->
     <section class="portfolio" id="portfolio">
       <div class="container">
-        <h2 class="text-center text-uppercase text-secondary mb-0">PPDB Online 2017/2018</h2>
-        <h2 class="text-center text-uppercase text-secondary mb-0">SMA X PALEMBANG</h2>
-        <hr class="star-dark mb-5">
-        <div class="row">
-          <div class="col-md-4 col-lg-4">
-            <a class="portfolio-item d-block mx-auto" href="#tab1" id="pendaftaran">
+        <div class="row" style="margin-top: 200px;">
+          <div class="col-md-4 col-lg-4" >
+            <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-1">
               <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
                 <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
-           <!--        <i class="fa fa-search-plus fa-3x"></i> -->
+                  <i class="fa fa-search-plus fa-3x"></i>
                 </div>
               </div>
               <img class="img-fluid" src="<?php echo base_url()?>assets/freelancer/img/portfolio/cabin.png" alt="">
+             <center> <h3 style="background-color: #2C3E50; color :white">FORMULIR PENDAFTARAN</h3></center>
             </a>
           </div>
           <div class="col-md-4 col-lg-4">
@@ -74,6 +72,7 @@
                 </div>
               </div>
               <img class="img-fluid" src="<?php echo base_url()?>assets/freelancer/img/portfolio/cake.png" alt="">
+              <center> <h3 style="background-color: #2C3E50; color :white">INFORMASI PENDAFTARAN</h3></center>
             </a>
           </div>
           <div class="col-md-4 col-lg-4">
@@ -84,6 +83,7 @@
                 </div>
               </div>
               <img class="img-fluid" src="<?php echo base_url()?>assets/freelancer/img/portfolio/circus.png" alt="">
+              <center> <h3 style="background-color: #2C3E50; color :white">PENGUMUMAN SELEKSI</h3></center>
             </a>
           </div>
         </div>
