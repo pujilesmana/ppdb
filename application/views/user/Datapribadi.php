@@ -1,8 +1,6 @@
-        <!-- /.col-lg-3 -->
-
         <div class="col-lg-9" style="border-color: black">
-
-          <h3>Data Pribadi</h3>
+          <center>
+          <h3 style="margin-top: -150px;">Data Pribadi</h3></center>
           <table>
               <tr>
                   <td>Nama Lengkap*</td>

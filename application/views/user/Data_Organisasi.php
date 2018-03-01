@@ -1,8 +1,5 @@
-        <!-- /.col-lg-3 -->
-
-        <div class="col-lg-9" style="border-color: black">
-
-          <h3>Data Organisasi</h3>
+<div class="col-lg-9" style="border-color: black">
+          <center><h3 style="margin-top: -150px;">Data Organisasi</h3></center>
           <table>
               <tr>
                   <td width="400px" height="50px">Apakah anda pernah mengikuti organisasi ?</td>

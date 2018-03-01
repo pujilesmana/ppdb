@@ -1,6 +1,6 @@
-        <div class="col-lg-9">
+<div class="col-lg-9">
 
-          <h3>Data Kesehatan</h3>
+        <center><h3 style="margin-top: -150px;">Data Kesehatan</h3></center>
           <table>
               <tr>
                   <td>Nama Dokter</td>
