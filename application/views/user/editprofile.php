@@ -23,11 +23,11 @@
           <center>
           <table>
               <tr>
-                <td><h3>Ubah Password Anda :</h3></td>
+                <td><h3 style="margin-top: -100px;">Ubah Password Anda :</h3></td>
               </tr>
               <tr>
                   <td width="350px">NISN</td>
-                  <td width="20px" height="50px"><input type="text" name="form-username"  class="form-username form-control" id="form-username"></td>
+                  <td width="20px" height="50px"><input type="text" name="form-username"  class="form-username form-control" id="form-username" disabled=""></td>
               </tr>
               <tr>
                   <td>Password Baru*</td>
@@ -39,7 +39,7 @@
               </tr>
               <tr>
                 <td style="margin: 50px;">
-                  <button type="button" class="btn btn-primary" style="margin-bottom:  200px; margin-top: 55px; background-color: #EFEFEF ;color: black; border-color: #D9D9D9">Reset</button>
+                  <button type="button" class="btn btn-primary" style="margin-bottom:  112px; margin-top: 55px; background-color: #EFEFEF ;color: black; border-color: #D9D9D9">Reset</button>
                 </td>
               </tr>
 
