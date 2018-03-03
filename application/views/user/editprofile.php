@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Informasi Pendaftaran</title>
+	<title>Edit Profile</title>
 
 	 <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -18,22 +18,13 @@
     <link href="css/freelancer.min.css" rel="stylesheet">
 </head>
 <body>
-<section class="portfolio" id="portfolio">
-      <div class="container">
-        <h2 class="text-center text-uppercase text-secondary mb-0">PPDB Online 2017/2018</h2>
-        <h2 class="text-center text-uppercase text-secondary mb-0">SMA X PALEMBANG</h2>
-        <hr class="star-dark mb-5">
-	  </div>  
-</section>
-
-
     <div class="container">
 <!-- style="border: solid 1px #6BCDFD; padding: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; -webkit-border-radius: 15px; border-radius: 15px; margin: 0; text-align: justify; line-height: 23px; color: black; font-size: 18px" -->
-        <div >
-
-          <h3>Edit Profile</h3>
           <center>
           <table>
+              <tr>
+                <td><h3>Ubah Password Anda :</h3></td>
+              </tr>
               <tr>
                   <td width="350px">NISN</td>
                   <td width="20px" height="50px"><input type="text" name="form-username"  class="form-username form-control" id="form-username"></td>
@@ -48,18 +39,13 @@
               </tr>
               <tr>
                 <td style="margin: 50px;">
-                  <button type="button" class="btn btn-primary">Reset</button>
+                  <button type="button" class="btn btn-primary" style="margin-bottom:  200px; margin-top: 55px; background-color: #EFEFEF ;color: black; border-color: #D9D9D9">Reset</button>
                 </td>
               </tr>
 
           </table>
                
           </center>
-
-        
-
-
-        </div>
         <!-- /.col-lg-9 -->
 
 

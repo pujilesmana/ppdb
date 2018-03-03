@@ -34,6 +34,18 @@
 				elseif ($action == "dataKesehatan") {
 					$this->prosesdataOrangtua();
 				}
+				elseif ($action == "dataProfile") {
+					$this->prosesdataProfile();
+				}
+				elseif ($action == "dataverifikasi") {
+					$this->prosesdatapengumumanVerifikasi();
+				}
+				elseif ($action == "datahasilujian") {
+					$this->prosesdatapengumumanUjian();
+				}
+				elseif ($action == "datainformasi") {
+					$this->prosesdatainformasi();
+				}
 				else{
 					$this->home();
 				}
@@ -111,9 +123,46 @@
 			}			
 		}
 
+		 public function prosesdataProfile(){
+		 	if($this->session->userdata("tipe_account") == 2) {
+		 		$this->load->view("user/header.php");
+		 		$this->load->view("user/Editprofile.php");
+				$this->load->view("user/footer");
+		 	}
+		 }
+
+		public function prosesdatapengumumanVerifikasi() {
+			if($this->session->userdata("tipe_account") == 2) {
+				$this->load->view("user/header.php");
+				$this->load->view("user/sidebar_pengumuman.php");
+				$this->load->view("user/Pengumuman_verifikasi.php");
+				$this->load->view("user/footer");
+			}
+		}
+
+		public function prosesdatapengumumanUjian() {
+			if($this->session->userdata("tipe_account") == 2) {
+				$this->load->view("user/header.php");
+				$this->load->view("user/sidebar_pengumuman.php");
+				$this->load->view("user/Pengumuman_hasilujian.php");
+				$this->load->view("user/footer");
+
+			}
+		}
+		public function prosesdatainformasi() {
+			if($this->session->userdata("tipe_account") == 2) {
+				$this->load->view("user/header.php");
+				$this->load->view("user/sidebar_informasi.php");
+				$this->load->view("user/Informasi_pendaftaran.php");
+				$this->load->view("user/footer");
+
+			}
+		}
 		public function prosesdataKesehatan(){
 
 		}
+
+
 
 		public function logoutProses(){
 			$this->session->sess_destroy();

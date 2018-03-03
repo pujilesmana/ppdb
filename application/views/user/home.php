@@ -31,7 +31,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top" style="margin-left: -150px;">PPDB Online SMA X Palembang</a>
+        <a class="navbar-brand js-scroll-trigger" href="<?php echo base_url()?>User" style="margin-left: -150px;">PPDB Online SMA X Palembang</a>
         <button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
           <i class="fa fa-bars"></i>
@@ -39,10 +39,10 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">Profile</a>
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="<?php echo base_url()?>User/dataProfile" style="color :white">Profile</a>
             </li>
             <li class="mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="<?php echo base_url()?>User/1" >Logout</a>
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="<?php echo base_url()?>User/1">Logout</a>
             </li>
           </ul>
         </div>
@@ -54,34 +54,19 @@
       <div class="container">
         <div class="row" style="margin-top: 200px;">
           <div class="col-md-4 col-lg-4" >
-            <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-1">
-              <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
-                <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
-                  <i class="fa fa-search-plus fa-3x"></i>
-                </div>
-              </div>
+            <a href="<?php echo base_url()?>User/datapribadi">
               <img class="img-fluid" src="<?php echo base_url()?>assets/freelancer/img/portfolio/cabin.png" alt="">
              <center> <h3 style="background-color: #2C3E50; color :white">FORMULIR PENDAFTARAN</h3></center>
             </a>
           </div>
           <div class="col-md-4 col-lg-4">
-            <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-2">
-              <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
-                <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
-                  <i class="fa fa-search-plus fa-3x"></i>
-                </div>
-              </div>
+            <a href="<?php echo base_url()?>User/datainformasi">
               <img class="img-fluid" src="<?php echo base_url()?>assets/freelancer/img/portfolio/cake.png" alt="">
               <center> <h3 style="background-color: #2C3E50; color :white">INFORMASI PENDAFTARAN</h3></center>
             </a>
           </div>
           <div class="col-md-4 col-lg-4">
-            <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-3">
-              <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
-                <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
-                  <i class="fa fa-search-plus fa-3x"></i>
-                </div>
-              </div>
+            <a href="<?php echo base_url()?>User/dataverifikasi">
               <img class="img-fluid" src="<?php echo base_url()?>assets/freelancer/img/portfolio/circus.png" alt="">
               <center> <h3 style="background-color: #2C3E50; color :white">PENGUMUMAN SELEKSI</h3></center>
             </a>
