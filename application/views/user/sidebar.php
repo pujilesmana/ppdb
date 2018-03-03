@@ -6,7 +6,7 @@
         <div class="col-lg-3" style="margin-top: -105px;">
 
           <div class="list-group">  
-            <a href="#" class="list-group-item">Data Pribadi</a>
+            <a href="#" class="list-group-item" style="background-color: #EFEFEF">Data Pribadi</a>
             <a href="#" class="list-group-item">Data Sekolah</a>
             <a href="#" class="list-group-item">Data Nilai Rapot</a>
             <a href="#" class="list-group-item">Data Organisasi</a>
