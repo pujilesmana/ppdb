@@ -16,6 +16,26 @@
 
     <!-- Custom styles for this template -->
     <link href="<?php echo base_url()?>assets/freelancer/css/freelancer2.min.css" rel="stylesheet">
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="<?php echo base_url()?>assets/freelancer/vendor/jquery/jquery.min.js"></script>
+    <script src="<?php echo base_url()?>assets/freelancer/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="<?php echo base_url()?>assets/freelancer/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="<?php echo base_url()?>assets/freelancer/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="<?php echo base_url()?>assets/freelancer/js/jqBootstrapValidation.js"></script>
+    <script src="<?php echo base_url()?>assets/freelancer/js/contact_me.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="<?php echo base_url()?>assets/freelancer/js/freelancer.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url()?>assets/"></script>
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/codeseven/toastr.css" />
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/codeseven/toastr.min.css" />
+    <script src="<?php echo base_url(); ?>assets/js/codeseven/toastr.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/js/codeseven/toastr.js"></script>  
 </head>
 <body>
 <section class="portfolio" id="portfolio">
