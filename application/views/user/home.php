@@ -54,7 +54,7 @@
       <div class="container">
         <div class="row" style="margin-top: 200px;">
           <div class="col-md-4 col-lg-4" >
-            <a href="<?php echo base_url()?>User/datapribadi">
+            <a href="<?php echo base_url()?>Daftar/datapribadi/<?php echo $nisn ?>">
               <img class="img-fluid" src="<?php echo base_url()?>assets/freelancer/img/portfolio/cabin.png" alt="">
              <center> <h3 style="background-color: #2C3E50; color :white">FORMULIR PENDAFTARAN</h3></center>
             </a>
@@ -100,10 +100,10 @@
 
 </html>
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
   $(document).ready(function(){
       $("#pendaftaran").click(function(){
           window.location.href = "<?php echo site_url();?>User/datapribadi";
       }) 
   });
-</script>
+</script> -->
