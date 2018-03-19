@@ -66,7 +66,7 @@
             </a>
           </div>
           <div class="col-md-4 col-lg-4">
-            <a href="<?php echo base_url()?>User/dataverifikasi">
+            <a href="<?php echo base_url()?>User/dataPengumumanverifikasi">
               <img class="img-fluid" src="<?php echo base_url()?>assets/freelancer/img/portfolio/circus.png" alt="">
               <center> <h3 style="background-color: #2C3E50; color :white">PENGUMUMAN SELEKSI</h3></center>
             </a>
