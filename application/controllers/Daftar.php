@@ -114,9 +114,9 @@
 						$this->load->view("user/header.php");
 						$this->load->view("user/sidebar.php");
 						$this->load->view("user/Data_nilai_rapot.php",["dataRaport" => $row_data, "nisn" => $nisn]);
-						$this->load->view("user/footer");
-					
-				}else{
+						$this->load->view("user/footer");	
+				}
+				else{
 						$nisn = $this->session->userdata("nisn");
 						$list_data = $this->modelPendaftaran->read("*","WHERE nisn='".$nisn."'","data_raport");
 						$row_data = $list_data->result_array();
@@ -134,6 +134,7 @@
 		public function prosesNilaiRapot(){
 			if($this->session->userdata("tipe_account") == 2){
 				$obj = json_decode($_POST['myData']);
+
 				$mtk1 			= $obj->mtk1;
 				$b_indonesia1 	= $obj->b_indonesia1;
 				$b_inggris1 	= $obj->b_inggris1;
@@ -216,7 +217,111 @@
 
 		public function dataPrestasi($nisn){
 			if($this->session->userdata("tipe_account") == 2){
-				echo $nisn;
+		   		$query1 = $this->modelPendaftaran->read("*","WHERE nisn = '".$nisn."'","data_prestasi")->num_rows();
+		   		if($query1 == 0){
+		   			$this->modelPendaftaran->insert("data_prestasi(nisn)","'".$nisn."'");
+		   			$nisn = $this->session->userdata("nisn");
+
+					$list_data = $this->modelPendaftaran->read("*","WHERE nisn='".$nisn."'","data_prestasi")->result_array();
+
+
+		   			$this->load->view("user/header.php");
+					$this->load->view("user/sidebar.php");
+					$this->load->view("user/Data_Prestasi.php",["nisn" => $nisn, "dataPrestasi" =>$list_data]);
+					$this->load->view("user/footer");
+		   		}else{
+		   			$nisn = $this->session->userdata("nisn");
+
+					$list_data = $this->modelPendaftaran->read("*","WHERE nisn='".$nisn."'","data_prestasi")->result_array();
+
+
+		   			$this->load->view("user/header.php");
+					$this->load->view("user/sidebar.php");
+					$this->load->view("user/Data_Prestasi.php",["nisn" => $nisn, "dataPrestasi" =>$list_data]);
+					$this->load->view("user/footer");
+		   		}
+
+
+			}
+		}
+
+		public function prosesdataPrestasi(){
+			$nisn = $this->session->userdata("nisn");
+			$this->dataOrangTua(nisn);
+		}
+
+		public function dataOrangTua($nisn){
+			if($this->session->userdata("tipe_account") == 2){
+				$query1 = $this->modelPendaftaran->read("*","WHERE nisn = '".$nisn."'","data_ortu_a")->num_rows();
+				if($query1 == 0){
+		   			$this->modelPendaftaran->insert("data_ortu_a(nisn,gender)","'".$nisn."',pria");
+		   			$this->modelPendaftaran->insert("data_ortu_a(nisn,gender)","'".$nisn."',wanita");
+		   			$nisn = $this->session->userdata("nisn");
+
+					$list_dataAyah = $this->modelPendaftaran->read("*","WHERE nisn='".$nisn."' and gender=pria","data_ortu_a")->result_array();
+					$list_dataIbu = $this->modelPendaftaran->read("*","WHERE nisn='".$nisn."' and gender=wanita","data_ortu_a")->result_array();
+
+
+		   			$this->load->view("user/header.php");
+					$this->load->view("user/sidebar.php");
+					$this->load->view("user/Data_Pribadi_Ortu.php",["nisn" => $nisn, "dataAyah" =>$list_dataAyah, "dataIbu" => $list_dataIbu]);
+					$this->load->view("user/footer");
+		   		}
+		   		else{
+		   			$nisn = $this->session->userdata("nisn");
+
+					$list_dataAyah = $this->modelPendaftaran->read("*","WHERE nisn='".$nisn."' and gender=pria","data_ortu_a")->result_array();
+					$list_dataIbu = $this->modelPendaftaran->read("*","WHERE nisn='".$nisn."' and gender=wanita","data_ortu_a")->result_array();
+
+					
+					$this->load->view("user/header.php");
+					$this->load->view("user/sidebar.php");
+					$this->load->view("user/Data_Pribadi_Ortu.php",["nisn" => $nisn, "dataAyah" =>$list_dataAyah, "dataIbu" => $list_dataIbu]);
+					$this->load->view("user/footer");
+		   		}
+				
+			}
+		}
+
+		public function prosesDataOrtu(){
+			if($this->session->userdata("tipe_account") == 2){
+				$obj = json_decode($_POST['myData']);
+				$nisn 			 		= $obj->nisn; 
+				$namaAyah 				= $obj->namaAyah;
+				$tanggalAyah	 		= $obj->tanggalAyah;
+				$tempatAyah		 		= $obj->tempatAyah;
+				$ktpAyah				= $obj->ktpAyah;
+				$alamatAyah 			= $obj->alamatAyah;
+				$teleponAyah 			= $obj->teleponAyah;
+				$StatusAyah 			= $obj->StatusAyah
+				$pendidikanAyah			= $obj->pendidikanAyah;
+				$statusPekerjaanAyah	= $obj->statusPekerjaanAyah;
+				$jenisPekerjaanAyah		= $obj->jenisPekerjaanAyah;
+				$perusahaanAyah			= $obj->perusahaanAyah;
+				$jabatanAyah			= $obj->jabatanAyah;
+				$tahunMulaiAyah			= $obj->tahunMulaiAyah;
+				$penghasilanAyah		= $obj->penghasilanAyah;
+
+				$namaIbu 				= $obj->namaIbu;
+				$tanggalIbu	 			= $obj->tanggalIbu;
+				$tempatIbu		 		= $obj->tempatIbu;
+				$ktpIbu					= $obj->ktpIbu;
+				$alamatIbu 				= $obj->alamatIbu;
+				$teleponIbu 			= $obj->teleponIbu;
+				$StatusIbu 				= $obj->StatusIbu;
+				$pendidikanIbu			= $obj->pendidikanIbu;
+				$statusPekerjaanIbu		= $obj->statusPekerjaanIbu;
+				$jenisPekerjaanIbu		= $obj->jenisPekerjaanIbu;
+				$perusahaanIbu			= $obj->perusahaanIbu;
+				$jabatanIbu				= $obj->jabatanIbu;
+				$tahunMulaiIbu			= $obj->tahunMulaiIbu;
+				$penghasilanIbu			= $obj->penghasilanIbu;
+
+				$this->modelPendaftaran->update("data_ortu_a","nama = '".$namaAyah."',tanggal_lahir = '".$tanggalAyah."',tempat_lahir = '".$tempatAyah."',no_ktp = '".$ktpAyah."',alamat = '".$alamatAyah."', no_telp = '".$teleponAyah."', status = '".$StatusAyah."', pendidikan_terakhir = '".$pendidikanAyah."', status_pekerjaan = '".$statusPekerjaanAyah."', jenis_pekerjaan = '".$jenisPekerjaanAyah."', nama_perusahaan = '".$perusahaanAyah."', jabatan = '".$jabatanAyah."', tahun_mulai_kerja = '".$tahunMulaiAyah."', penghasilan = '".$penghasilanAyah."' WHERE gender = pria and nisn = '".$nisn."'");
+
+				$this->modelPendaftaran->update("data_ortu_a","nama = '".$namaIbu."',tanggal_lahir = '".$tanggalIbu."',tempat_lahir = '".$tempatIbu."',no_ktp = '".$ktpIbu."',alamat = '".$alamatIbu."', no_telp = '".$teleponIbu."', status = '".$StatusIbu."', pendidikan_terakhir = '".$pendidikanIbu."', status_pekerjaan = '".$statusPekerjaanIbu."', jenis_pekerjaan = '".$jenisPekerjaanIbu."', nama_perusahaan = '".$perusahaanIbu."', jabatan = '".$jabatanIbu."', tahun_mulai_kerja = '".$tahunMulaiIbu."', penghasilan = '".$penghasilanIbu."' WHERE gender = wanita and nisn = '".$nisn."'");
+
+				echo 1;
 			}
 		}
 	}
