@@ -72,7 +72,7 @@
           e.preventDefault();
           var postData = {
                                   "nisn"              : "<?php echo $nisn ?>",
-                                  "pernah"            : $(".pernah").val(),
+                                  "pernah"            : $(".pernah").val(), //$('input[name="organisasi"]:checked').val()
                                   "nama_organisasi"   : $("#nama_organisasi").val(),
                                   "jbtn_organisasi"   : $("#jbtn_organisasi").val(),
                                   "masaperiod"        : $("#masaperiod").val()
