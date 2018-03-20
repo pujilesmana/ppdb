@@ -2,11 +2,6 @@
           <center><h3 style="margin-top: -150px;">Data Prestasi</h3></center>
           <table>
               <tr>
-                  <td width="500px" height="50px">Apakah Anda Memiliki Prestasi di luar sekolah?*</td>
-                  <td><input type="radio" name="gender" value="male"> Ya
-                  <input type="radio" name="gender" value="female"> Tidak</td>
-              </tr>
-              <tr>
                   <td width="400px" height="50px">Apakah Anda Memiliki Prestasi di luar sekolah ?</td>
                   <td>
                     <input type="radio" name="prestasi" id="ya" class="pernah" <?php if($dataPrestasi[0]['pernah'] == 'Ya') echo "checked='checked'";?> value="Ya" > Ya
@@ -30,34 +25,41 @@
                 <table>
                   <tr>
                       <td>Nama Kejuaraan*</td>
-                      <td width="400px" height="50px"><input type="text" name="nama_prestasi" class="form-username form-control" id="nama_prestasi"></td>
+                      <td width="600px" height="50px"><input type="text" name="nama_prestasi" class="form-control" id="nama_prestasi"><?php echo $dataPrestasi[0]['nama_kejuaraan']?></td>
                   </tr>
                   <tr>
                       <td>Tingkat Kejuaraan*</td>
-                      <td height="50px"><select style="width: 400px; height: 40px;"">
+                  <td>
+                    <select id="tingkat_kejuaraan" style="width: 700px; height: 40px;" style="width: 400px; height: 40px;">
+                     <option nama="agama" value = "<?php echo $dataPrestasi[0]['tingkat_kejuaraan']?>"><?php echo $dataPrestasi[0]['tingkat_kejuaraan']?></option>
                      <option nama="Tingkat" value="Internasional">Internasional</option>
                      <option nama="Tingkat" value="Nasional">Nasional</option>
                      <option nama="Tingkat" value="Provinsi">Provinsi</option>
                      <option nama="Tingkat" value="Kota">Kota</option>
                      <option nama="Tingkat" value="Kabupaten">Kabupaten</option>
                      <option nama="Tingkat" value="dll">Dan lain-lain</option>
-                     </select></td>
+                    </select>
+                  </td>
                   </tr>
                   <tr>
-                      <td>Juara*</td>
-                     <td height="50px"><select style="width: 400px; height: 40px;"">
+                  <td>Juara*</td>
+                  <td>
+                    <select id="juara" style="width: 700px; height: 40px;"">
+                     <option nama="agama" value = "<?php echo $dataPrestasi[0]['juara']?>"><?php echo $dataPrestasi[0]['juara']?></option>
                      <option nama="Juara" value="1">1</option>
                      <option nama="Juara" value="2">2</option>
                      <option nama="Juara" value="3">3</option>
-                     </select></td>
+                    </select>
+                  </td>
                   </tr>
                   <tr>
                       <td>Kategori Kegiatan*</td>
-                      <td width="400px" height="50px"><input type="text" name="form-username"  class="form-username form-control" id="form-username"></td>
+                      <td width="600px" height="50px"><input type="text" name="ktgr_kegiatan" id="ktgr_kegiatan" class="form-control"><?php echo $dataPrestasi[0]['tingkat_kejuaraan']?></td>
                   </tr>
                   <tr>
                       <td>Tahun Kegiatan*</td>
-                      <td height="50px"><select style="width: 400px; height: 40px;"">
+                      <td width="600px" height="50px"><select id="tahun_kegiatan" style="width: 700px; height: 40px;"">
+                     <option nama="agama" value = "<?php echo $dataPrestasi[0]['tahun']?>"><?php echo $dataPrestasi[0]['tahun']?></option>
                      <option nama="tahun_kegiatan" value="2014">2014</option>
                      <option nama="tahun_kegiatan" value="2015">2015</option>
                      <option nama="tahun_kegiatan" value="2016">2016</option>
@@ -67,18 +69,15 @@
                   </tr>
                   <tr>
                       <td>Memiliki Sertifikat ?</td>
-                      <td><input type="radio" name="gender" value="male"> Ya
-                      <input type="radio" name="gender" value="female"> Tidak</td>
-                  </tr>
-                  <tr>
-                      <td>Upload Berkas Sertifikat</td>
+                      <td width="600px" height="50px"><input type="radio" name="sertifikat" id="sertifikat" <?php if($dataPrestasi[0]['sertifikat'] == 'Ya') echo "checked='checked'";?> value="Ya"> Ya
+                      <input type="radio" name="sertifikat" id="sertifikat" <?php if($dataPrestasi[0]['sertifikat'] == 'Ya') echo "checked='checked'";?> value="Tidak"> Tidak</td>
                   </tr>
                   <tr>
                   <td >
-                      <a href="<?php echo base_url();?>User/dataOrganisasi"><button type="button" class="btn btn-primary" style=" margin-bottom:  200px; margin-top: 55px; margin-right:-100px;">Kembali</button></a>
+                      <a href="<?php echo base_url();?>Daftar/dataOrganisasi/<?php echo $nisn ?>"><button type="button" class="btn btn-primary" style=" margin-bottom:  200px; margin-top: 55px; margin-right:-100px;">Kembali</button></a>
                       </td>
                       <td >
-                      <a href="<?php echo base_url();?>User/dataOrangTua"><button type="button" class="btn btn-success" style=" margin-bottom:  200px; margin-top: 55px;margin-left: -330px;">Lanjut</button></a>
+                      <button type="sumbit" class="btn btn-success" style=" margin-bottom:  200px; margin-top: 55px;margin-left: -28px;">Lanjut</button>
                     </td>
                   </tr>
                   <tr></tr>
@@ -115,9 +114,12 @@
           var postData = {
                                   "nisn"              : "<?php echo $nisn ?>",
                                   "pernah"            : $(".pernah").val(),
-                                  "nama_organisasi"   : $("#nama_organisasi").val(),
-                                  "jbtn_organisasi"   : $("#jbtn_organisasi").val(),
-                                  "masaperiod"        : $("#masaperiod").val()
+                                  "nama_prestasi"     : $("#nama_prestasi").val(),
+                                  "tingkat_kejuaraan" : $("#tingkat_kejuaraan").val(),
+                                  "juara"             : $("#juara").val(),
+                                  "ktgr_kegiatan"     : $("#ktgr_kegiatan").val(),
+                                  "tahun_kegiatan"    : $("#tahun_kegiatan").val(),
+                                  "sertifikat"        : $("#sertifikat").val()
           };
           var nisn = <?php echo $nisn?>;
           var dataString = JSON.stringify(postData);
@@ -134,7 +136,7 @@
                                             }
                                            else if(data == 1){   
                                                    toastr.success("Data pribadi telah ditambahkan","Berhasil :)");
-                                                   window.location.href = "<?php echo base_url()?>Daftar/dataPrestasi/"+ nisn;
+                                                   window.location.href = "<?php echo base_url()?>Daftar/dataOrangTua/"+ nisn;
                                             }
                               },
                                     error : function (request) {
