@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 06, 2018 at 11:12 AM
+-- Generation Time: Mar 20, 2018 at 09:28 AM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 5.6.24
 
@@ -20,7 +20,6 @@ SET time_zone = "+00:00";
 -- Database: `ppdb`
 --
 
-
 -- --------------------------------------------------------
 
 --
@@ -31,15 +30,21 @@ CREATE TABLE `account` (
   `nisn` varchar(30) NOT NULL,
   `username` varchar(25) NOT NULL,
   `password` varchar(50) NOT NULL,
-  `tipe_account` int(11) NOT NULL
+  `tipe_account` int(11) NOT NULL,
+  `daftar` int(3) DEFAULT NULL,
+  `verifikasi` int(3) DEFAULT NULL,
+  `kelulusan` int(3) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `account`
 --
 
-INSERT INTO `account` (`nisn`, `username`, `password`, `tipe_account`) VALUES
-('90', 'pujilesmana', 'lesmana123', 2);
+INSERT INTO `account` (`nisn`, `username`, `password`, `tipe_account`, `daftar`, `verifikasi`, `kelulusan`) VALUES
+('0000', 'admin', 'lesmana123', 1, NULL, NULL, NULL),
+('90', 'pujilesmana', 'lesmana123', 2, 1, 2, NULL),
+('91', 'Lifya Fitriani', 'lesmana123', 2, 1, 1, 2),
+('92', 'Tri Kurnia Sari', 'lesmana123', 2, 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -82,7 +87,7 @@ CREATE TABLE `data_organisasi` (
 --
 
 INSERT INTO `data_organisasi` (`id_organsasi`, `pernah`, `nama_organisasi`, `jabatan`, `masa_periode`, `nisn`) VALUES
-(10, 'Ya', 'as', 'as', 'as', '90');
+(12, 'Ya', '', '', '', '90');
 
 -- --------------------------------------------------------
 
@@ -117,6 +122,7 @@ CREATE TABLE `data_ortu_a` (
 
 CREATE TABLE `data_prestasi` (
   `id_prestasi` int(11) NOT NULL,
+  `pernah` varchar(10) DEFAULT NULL,
   `nama_kejuaraan` varchar(100) DEFAULT NULL,
   `tingkat_kejuaraan` varchar(50) DEFAULT NULL,
   `juara` int(11) DEFAULT NULL,
@@ -125,6 +131,13 @@ CREATE TABLE `data_prestasi` (
   `sertifikat` varchar(20) DEFAULT NULL,
   `nisn` varchar(30) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `data_prestasi`
+--
+
+INSERT INTO `data_prestasi` (`id_prestasi`, `pernah`, `nama_kejuaraan`, `tingkat_kejuaraan`, `juara`, `kategori_kegiatan`, `tahun`, `sertifikat`, `nisn`) VALUES
+(0, 'Ya', 'Voli', 'Provinsi', 2, 'Olahraga', 2016, 'Ya', '90');
 
 -- --------------------------------------------------------
 
@@ -362,7 +375,7 @@ ALTER TABLE `tipe_account`
 -- AUTO_INCREMENT for table `data_organisasi`
 --
 ALTER TABLE `data_organisasi`
-  MODIFY `id_organsasi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_organsasi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT for table `data_ortu_a`
 --

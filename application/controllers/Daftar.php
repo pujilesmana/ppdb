@@ -234,7 +234,6 @@
 
 					$list_data = $this->modelPendaftaran->read("*","WHERE nisn='".$nisn."'","data_prestasi")->result_array();
 
-
 		   			$this->load->view("user/header.php");
 					$this->load->view("user/sidebar.php");
 					$this->load->view("user/Data_Prestasi.php",["nisn" => $nisn, "dataPrestasi" =>$list_data]);
@@ -246,20 +245,33 @@
 		}
 
 		public function prosesdataPrestasi(){
-			$nisn = $this->session->userdata("nisn");
-			$this->dataOrangTua(nisn);
+			if($this->session->userdata("tipe_account") == 2){
+				$obj = json_decode($_POST['myData']);
+				$nisn 				= $obj->nisn;
+				$pernah 			= $obj->pernah;
+				$nama_kejuaraan 	= $obj->nama_prestasi;
+				$tingkat_kejuaraan 	= $obj->tingkat_kejuaraan;
+				$juara 				= $obj->juara;
+				$ktgr_kegiatan 		= $obj->ktgr_kegiatan;
+				$tahun_kegiatan 	= $obj->tahun_kegiatan;
+				$sertifikat 		= $obj->sertifikat;
+
+				$this->modelPendaftaran->update("data_prestasi","pernah = '".$pernah."',nama_kejuaraan = '".$nama_kejuaraan."',tingkat_kejuaraan = '".$tingkat_kejuaraan."', juara = '".$juara."', kategori_kegiatan = '".$ktgr_kegiatan."', tahun = '".$tahun_kegiatan."', sertifikat = '".$sertifikat."' WHERE nisn = '".$nisn."' ");
+				echo 1;
+
+			}
 		}
 
 		public function dataOrangTua($nisn){
 			if($this->session->userdata("tipe_account") == 2){
 				$query1 = $this->modelPendaftaran->read("*","WHERE nisn = '".$nisn."'","data_ortu_a")->num_rows();
 				if($query1 == 0){
-		   			$this->modelPendaftaran->insert("data_ortu_a(nisn,gender)","'".$nisn."',pria");
-		   			$this->modelPendaftaran->insert("data_ortu_a(nisn,gender)","'".$nisn."',wanita");
+		   			$this->modelPendaftaran->insert("data_ortu_a(nisn,gender)","'".$nisn."','pria'");
+		   			$this->modelPendaftaran->insert("data_ortu_a(nisn,gender)","'".$nisn."','wanita'");
 		   			$nisn = $this->session->userdata("nisn");
 
-					$list_dataAyah = $this->modelPendaftaran->read("*","WHERE nisn='".$nisn."' and gender=pria","data_ortu_a")->result_array();
-					$list_dataIbu = $this->modelPendaftaran->read("*","WHERE nisn='".$nisn."' and gender=wanita","data_ortu_a")->result_array();
+					$list_dataAyah = $this->modelPendaftaran->read("*","WHERE nisn='".$nisn."' and gender= 'pria'","data_ortu_a")->result_array();
+					$list_dataIbu = $this->modelPendaftaran->read("*","WHERE nisn='".$nisn."' and gender='wanita'","data_ortu_a")->result_array();
 
 
 		   			$this->load->view("user/header.php");
@@ -270,8 +282,8 @@
 		   		else{
 		   			$nisn = $this->session->userdata("nisn");
 
-					$list_dataAyah = $this->modelPendaftaran->read("*","WHERE nisn='".$nisn."' and gender=pria","data_ortu_a")->result_array();
-					$list_dataIbu = $this->modelPendaftaran->read("*","WHERE nisn='".$nisn."' and gender=wanita","data_ortu_a")->result_array();
+					$list_dataAyah = $this->modelPendaftaran->read("*","WHERE nisn='".$nisn."' and gender='pria'","data_ortu_a")->result_array();
+					$list_dataIbu = $this->modelPendaftaran->read("*","WHERE nisn='".$nisn."' and gender='wanita'","data_ortu_a")->result_array();
 
 					
 					$this->load->view("user/header.php");
@@ -293,7 +305,7 @@
 				$ktpAyah				= $obj->ktpAyah;
 				$alamatAyah 			= $obj->alamatAyah;
 				$teleponAyah 			= $obj->teleponAyah;
-				$StatusAyah 			= $obj->StatusAyah
+				$StatusAyah 			= $obj->StatusAyah;
 				$pendidikanAyah			= $obj->pendidikanAyah;
 				$statusPekerjaanAyah	= $obj->statusPekerjaanAyah;
 				$jenisPekerjaanAyah		= $obj->jenisPekerjaanAyah;
