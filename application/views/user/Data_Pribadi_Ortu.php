@@ -58,7 +58,7 @@
               </tr>
               <tr>
                   <td>Penghasilan</td>
-                  <td width="200px" height="50px"><input type="text" name="penghasilanAyah"  class="form-username form-control" id="penghasilanAyah" value="<?= $dataAyah->pernghasilan ?>"></td>
+                  <td width="200px" height="50px"><input type="text" name="penghasilanAyah"  class="form-username form-control" id="penghasilanAyah" value="<?= $dataAyah->penghasilan ?>"></td>
               </tr>
           </table>
           <br><br><br>
@@ -99,7 +99,7 @@
               </tr>
               <tr>
                   <td width="200px">Status Pekerjaan</td>
-                  <td width="200px" height="50px"><input type="text" name="statusPekerjaanIbu"  class="form-username form-control" id="statusPekerjaanIbu" value="<?= $dataIbu->status ?>"></td>
+                  <td width="200px" height="50px"><input type="text" name="statusPekerjaanIbu"  class="form-username form-control" id="statusPekerjaanIbu" value="<?= $dataIbu->status_pekerjaan ?>"></td>
               </tr>
               <tr>
                   <td>Jenis Pekerjaan</td>
@@ -122,11 +122,12 @@
                   <td width="200px" height="50px"><input type="text" name="penghasilanIbu"  class="form-username form-control" id="penghasilanIbu" value="<?= $dataIbu->penghasilan ?>"></td>
               </tr>
               <tr>
-                  <td >
-                  <a href="<?php echo base_url();?>Daftar/dataSekolah/<?php echo $nisn?>"><button type="button" class="btn btn-primary" style=" margin-bottom:  200px; margin-top: 55px; margin-right:-100px;">Kembali</button></a>
+                  <td>
+                  <a href="<?php echo base_url();?>Daftar/dataPrestasi/<?php echo $nisn?>"><button type="button" class="btn btn-primary" style=" margin-bottom:  200px; margin-top: 40px; margin-right:-100px;">Kembali</button></a>
                   </td>
+
                   <td >
-                  <button type="submit" class="btn btn-success" id="dataOrangTua" style=" margin-bottom:  200px; margin-top: 55px;margin-left: -80px;">Lanjut</button>
+                  <button type="submit" class="btn btn-success" id="dataOrangTua" style=" margin-bottom:  200px; margin-top: 40px;margin-left:0px;">Lanjut</button>
                 </td>
               </tr>
               <tr></tr>
@@ -193,7 +194,7 @@
                                             }
                                            else if(data == 1){   
                                                    toastr.success("Data orang tua telah ditambahkan","Berhasil :)");
-                                                   window.location.href = "<?php echo base_url()?>Daftar/dataOrganisasi/"+ nisn;
+                                                   window.location.href = "<?php echo base_url()?>Daftar/dataKesehatan/"+ nisn;
                                             }
                                            else if(data == 2){
                                                  toastr.error("Data sudah pernah ada","MAAF :(");
