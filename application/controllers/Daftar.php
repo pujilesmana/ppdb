@@ -270,8 +270,8 @@
 		   			$this->modelPendaftaran->insert("data_ortu_a(nisn,gender)","'".$nisn."','wanita'");
 		   			$nisn = $this->session->userdata("nisn");
 
-					$list_dataAyah = $this->modelPendaftaran->read("*","WHERE nisn='".$nisn."' and gender= 'pria'","data_ortu_a")->result_array();
-					$list_dataIbu = $this->modelPendaftaran->read("*","WHERE nisn='".$nisn."' and gender='wanita'","data_ortu_a")->result_array();
+					$list_dataAyah = $this->modelPendaftaran->read("*","WHERE nisn='".$nisn."' and gender= 'pria'","data_ortu_a")->row();
+					$list_dataIbu = $this->modelPendaftaran->read("*","WHERE nisn='".$nisn."' and gender='wanita'","data_ortu_a")->row();
 
 
 		   			$this->load->view("user/header.php");
@@ -282,13 +282,16 @@
 		   		else{
 		   			$nisn = $this->session->userdata("nisn");
 
-					$list_dataAyah = $this->modelPendaftaran->read("*","WHERE nisn='".$nisn."' and gender='pria'","data_ortu_a")->result_array();
-					$list_dataIbu = $this->modelPendaftaran->read("*","WHERE nisn='".$nisn."' and gender='wanita'","data_ortu_a")->result_array();
+					$list_dataAyah = $this->modelPendaftaran->read("*","WHERE nisn='".$nisn."' and gender='pria'","data_ortu_a")->row();
+					$list_dataIbu = $this->modelPendaftaran->read("*","WHERE nisn='".$nisn."' and gender='wanita'","data_ortu_a")->row();
 
 					
 					$this->load->view("user/header.php");
 					$this->load->view("user/sidebar.php");
-					$this->load->view("user/Data_Pribadi_Ortu.php",["nisn" => $nisn, "dataAyah" =>$list_dataAyah, "dataIbu" => $list_dataIbu]);
+					$this->load->view("user/Data_Pribadi_Ortu.php",
+						["nisn" => $nisn,
+						"dataAyah" =>$list_dataAyah,
+						"dataIbu" => $list_dataIbu]);
 					$this->load->view("user/footer");
 		   		}
 				
@@ -329,9 +332,60 @@
 				$tahunMulaiIbu			= $obj->tahunMulaiIbu;
 				$penghasilanIbu			= $obj->penghasilanIbu;
 
-				$this->modelPendaftaran->update("data_ortu_a","nama = '".$namaAyah."',tanggal_lahir = '".$tanggalAyah."',tempat_lahir = '".$tempatAyah."',no_ktp = '".$ktpAyah."',alamat = '".$alamatAyah."', no_telp = '".$teleponAyah."', status = '".$StatusAyah."', pendidikan_terakhir = '".$pendidikanAyah."', status_pekerjaan = '".$statusPekerjaanAyah."', jenis_pekerjaan = '".$jenisPekerjaanAyah."', nama_perusahaan = '".$perusahaanAyah."', jabatan = '".$jabatanAyah."', tahun_mulai_kerja = '".$tahunMulaiAyah."', penghasilan = '".$penghasilanAyah."' WHERE gender = pria and nisn = '".$nisn."'");
+				$this->modelPendaftaran->update("data_ortu_a","nama = '".$namaAyah."',tanggal_lahir = '".$tanggalAyah."',tempat_lahir = '".$tempatAyah."',no_ktp = '".$ktpAyah."',alamat = '".$alamatAyah."', no_telp = '".$teleponAyah."', status = '".$StatusAyah."', pendidikan_terakhir = '".$pendidikanAyah."', status_pekerjaan = '".$statusPekerjaanAyah."', jenis_pekerjaan = '".$jenisPekerjaanAyah."', nama_perusahaan = '".$perusahaanAyah."', jabatan = '".$jabatanAyah."', tahun_mulai_kerja = '".$tahunMulaiAyah."', penghasilan = '".$penghasilanAyah."' WHERE gender = 'pria' and nisn = '".$nisn."'");
 
-				$this->modelPendaftaran->update("data_ortu_a","nama = '".$namaIbu."',tanggal_lahir = '".$tanggalIbu."',tempat_lahir = '".$tempatIbu."',no_ktp = '".$ktpIbu."',alamat = '".$alamatIbu."', no_telp = '".$teleponIbu."', status = '".$StatusIbu."', pendidikan_terakhir = '".$pendidikanIbu."', status_pekerjaan = '".$statusPekerjaanIbu."', jenis_pekerjaan = '".$jenisPekerjaanIbu."', nama_perusahaan = '".$perusahaanIbu."', jabatan = '".$jabatanIbu."', tahun_mulai_kerja = '".$tahunMulaiIbu."', penghasilan = '".$penghasilanIbu."' WHERE gender = wanita and nisn = '".$nisn."'");
+				$this->modelPendaftaran->update("data_ortu_a","nama = '".$namaIbu."',tanggal_lahir = '".$tanggalIbu."',tempat_lahir = '".$tempatIbu."',no_ktp = '".$ktpIbu."',alamat = '".$alamatIbu."', no_telp = '".$teleponIbu."', status = '".$StatusIbu."', pendidikan_terakhir = '".$pendidikanIbu."', status_pekerjaan = '".$statusPekerjaanIbu."', jenis_pekerjaan = '".$jenisPekerjaanIbu."', nama_perusahaan = '".$perusahaanIbu."', jabatan = '".$jabatanIbu."', tahun_mulai_kerja = '".$tahunMulaiIbu."', penghasilan = '".$penghasilanIbu."' WHERE gender = 'wanita' and nisn = '".$nisn."'");
+
+				echo 1;
+			}
+		}
+
+		public function dataKesehatan($nisn){
+			if($this->session->userdata("tipe_account") == 2){
+				$query1 = $this->modelPendaftaran->read("*","WHERE nisn = '".$nisn."'","data_kesehatan")->num_rows();
+				if($query1 == 0){
+		   			$this->modelPendaftaran->insert("data_kesehatan(nisn)","'".$nisn."'");
+		   			$nisn = $this->session->userdata("nisn");
+
+					$list_kesehatan = $this->modelPendaftaran->read("*","WHERE nisn='".$nisn."'","data_kesehatan")->row();
+
+
+		   			$this->load->view("user/header.php");
+					$this->load->view("user/sidebar.php");
+					$this->load->view("user/Data_Kesehatan.php",["nisn" => $nisn, "dataKesehatan" =>$list_kesehatan]);
+					$this->load->view("user/footer");
+		   		}
+		   		else{
+		   			$nisn = $this->session->userdata("nisn");
+
+					$list_kesehatan = $this->modelPendaftaran->read("*","WHERE nisn='".$nisn."'","data_kesehatan")->row();
+					
+					$this->load->view("user/header.php");
+					$this->load->view("user/sidebar.php");
+					$this->load->view("user/Data_Kesehatan.php",["nisn" => $nisn, "dataKesehatan" =>$list_kesehatan]);
+					$this->load->view("user/footer");
+		   		}
+				
+			}
+		}
+
+		public function prosesDataKesehatan(){
+			if($this->session->userdata("tipe_account") == 2){
+				$obj = json_decode($_POST['myData']);
+				$nisn 			 		= $obj->nisn; 
+				$nama_dokter			= $obj->nama_dokter;
+				$rumahsakit				= $obj->rumahsakit;
+				$jantung				= $obj->jantung;
+				$kanker					= $obj->kanker;
+				$kelainanPsikologis		= $obj->kelainanPsikologis;
+				$kelainanSaraf			= $obj->kelainanSaraf;
+				$kelainanDarah			= $obj->kelainanDarah;
+				$operasi				= $obj->operasi;
+				$masaPengobatan			= $obj->masaPengobatan;
+				$bantuanMedis			= $obj->bantuanMedis;
+				$perhatianFisik			= $obj->perhatianFisik;
+
+				$this->modelPendaftaran->update("data_kesehatan","nama_dokter = '".$nama_dokter."',rumah_sakit = '".$rumahsakit."',penyakit_jantung = '".$jantung."',penyakit_kanker = '".$kanker."',penyakit_kelainan_psikologis = '".$kelainanPsikologis."', kelainan_saraf = '".$kelainanSaraf."', kelainan_darah = '".$kelainanDarah."', pernah_operasi = '".$operasi."', masa_pengobatan = '".$masaPengobatan."', bantuan_medis = '".$bantuanMedis."', perhatian_fisik = '".$perhatianFisik."' WHERE nisn = '".$nisn."'");
 
 				echo 1;
 			}
