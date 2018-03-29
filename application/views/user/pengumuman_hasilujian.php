@@ -1,3 +1,17 @@
+<div class="container" style="height: 297px;">
+
+      <div class="row" style="height: 297px;">
+
+        <div class="col-lg-3" style="margin-top: -105px;">
+
+          <div class="list-group">  
+            <a href="<?php  echo base_url() ;?>User/dataPengumumanverifikasi" class="list-group-item">Tahap Verifikasi Berkas</a>
+            <a href="<?php  echo base_url() ;?>User/dataPengumumanhasilujian" class="list-group-item">Tahap Hasil Ujian</a>
+
+          </div>
+
+        </div>
+
 <div class="col-lg-9" style="border-color: black">
           <center>
           <h3 style="margin-top: -150px;">Pengumuman Hasil Ujian</h3></center>
