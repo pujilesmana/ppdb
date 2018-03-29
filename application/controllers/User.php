@@ -55,7 +55,7 @@
 				$row_data = $list_data->result_array();
 
 				$this->load->view("user/header.php");
-				$this->load->view("user/sidebar_pengumuman.php");
+				
 				$this->load->view("user/Pengumuman_verifikasi.php", ["dataverifikasi" => $row_data]);
 				$this->load->view("user/footer.php");
 			}
@@ -68,7 +68,7 @@
 				$row_data = $list_data->result_array();
 
 				$this->load->view("user/header.php");
-				$this->load->view("user/sidebar_pengumuman.php");
+			
 				$this->load->view("user/Pengumuman_hasilujian.php", ["datahasilujian" => $row_data]);
 				$this->load->view("user/footer.php");
 			}

@@ -25,7 +25,7 @@
                 <table>
                   <tr>
                       <td>Nama Kejuaraan*</td>
-                      <td width="600px" height="50px"><input type="text" name="nama_prestasi" class="form-control" id="nama_prestasi"><?php echo $dataPrestasi[0]['nama_kejuaraan']?></td>
+                      <td width="600px" height="50px"><input type="text" name="nama_prestasi" class="form-control" id="nama_prestasi" value="<?php echo $dataPrestasi[0]['nama_kejuaraan']?>"></td>
                   </tr>
                   <tr>
                       <td>Tingkat Kejuaraan*</td>
@@ -54,7 +54,7 @@
                   </tr>
                   <tr>
                       <td>Kategori Kegiatan*</td>
-                      <td width="600px" height="50px"><input type="text" name="ktgr_kegiatan" id="ktgr_kegiatan" class="form-control"><?php echo $dataPrestasi[0]['tingkat_kejuaraan']?></td>
+                      <td width="600px" height="50px"><input type="text" name="ktgr_kegiatan" id="ktgr_kegiatan" class="form-control" value="<?php echo $dataPrestasi[0]['tingkat_kejuaraan']?>"></td>
                   </tr>
                   <tr>
                       <td>Tahun Kegiatan*</td>
