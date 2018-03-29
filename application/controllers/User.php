@@ -28,6 +28,12 @@
 				elseif($action == 'datainformasi'){
 					$this->informasi();
 				}
+				elseif($action == 'setting'){
+					$this->setting();
+				}
+				elseif($action == 'prosesUbahPassword'){
+					$this->prosesUbahPassword();
+				}
 				else{
 					$this->home();
 				}
@@ -86,6 +92,38 @@
 		public function logoutProses(){
 			$this->session->sess_destroy();
 			redirect();
+		}
+
+		public function setting(){
+			if($this->session->userdata("tipe_account")==2){
+				$nisn = $this->session->userdata("nisn");
+				$list_data = $this->modelPeserta->read("*", "WHERE nisn = '".$nisn."'", "account")->row();
+
+				$this->load->view("user/header.php");
+				$this->load->view("user/editprofile", ["dataSiswa" => $list_data]);
+				$this->load->view("user/footer.php");
+			}
+		}
+
+		public function prosesUbahPassword(){
+			if($this->session->userdata("tipe_account")==2){
+				//$nisn = $this->session->userdata("nisn");
+				$obj = json_decode($_POST['myData']);
+				$nisn				= $obj->nisn;
+				$passwordBaru 		= $obj->password_baru;
+				$konfirmPassword 	= $obj->confirm_password_baru;
+
+				if($password_baru == $konfirmPassword){
+					$this->modelAccount->ubah_password($password_baru,$nisn);
+					echo 1;	
+				}
+				else
+					echo 0;
+			}
+		}
+
+		public function prosesReset(){
+			echo "hi";
 		}
 	}
 ?>

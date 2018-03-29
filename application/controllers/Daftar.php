@@ -386,7 +386,6 @@
 				$perhatianFisik			= $obj->perhatianFisik;
 
 				$this->modelPendaftaran->update("data_kesehatan","nama_dokter = '".$nama_dokter."',rumah_sakit = '".$rumahsakit."',penyakit_jantung = '".$jantung."',penyakit_kanker = '".$kanker."',penyakit_kelainan_psikologis = '".$kelainanPsikologis."', kelainan_saraf = '".$kelainanSaraf."', kelainan_darah = '".$kelainanDarah."', pernah_operasi = '".$operasi."', masa_pengobatan = '".$masaPengobatan."', bantuan_medis = '".$bantuanMedis."', perhatian_fisik = '".$perhatianFisik."' WHERE nisn = '".$nisn."'");
-
 				echo 1;
 			}
 		}

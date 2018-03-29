@@ -60,7 +60,7 @@
                   <a href="<?php echo base_url();?>Daftar/dataOrangTua/<?php echo $nisn?>"><button type="button" class="btn btn-primary" style=" margin-bottom:  200px; margin-top: 40px; margin-right:0px;">Kembali</button></a>
                   </td>
                   <td >
-                  <button type="submit" class="btn btn-success" id="dataKesehatan" style=" margin-bottom:  200px; margin-top: 40px;margin-left:0px;">Lanjut</button>
+                  <button type="submit" class="btn btn-success" style=" margin-bottom:  200px; margin-top: 40px;margin-left:-200px;">Lanjut</button>
                 </td>
               </tr>
               </tr>
@@ -79,7 +79,7 @@
           e.preventDefault();
           var postData = {
                                   "nisn"                    : "<?php echo $nisn ?>",
-                                  "nama_dokter"             : $("#namaAyah").val(),
+                                  "nama_dokter"             : $("#nama_dokter").val(),
                                   "rumahsakit"              : $("#rumahsakit").val(),
                                   "jantung"                 : $("#jantung").val(),
                                   "kanker"                  : $("#kanker").val(),
@@ -106,7 +106,7 @@
                                             }
                                            else if(data == 1){   
                                                    toastr.success("Data orang tua telah ditambahkan","Berhasil :)");
-                                                   window.location.href = "<?php echo base_url()?>Daftar/dataOrangTua/"+ nisn;
+                                                   window.location.href = "<?php echo base_url()?>User/home/"+ nisn;
                                             }
                                            else if(data == 2){
                                                  toastr.error("Data sudah pernah ada","MAAF :(");
