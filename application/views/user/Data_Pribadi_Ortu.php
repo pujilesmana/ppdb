@@ -29,8 +29,8 @@
               </tr>
               <tr>
                   <td>Status</td>
-                  <td><input type="radio" name="StatusAyah" value="ayah_kandung" id="StatusAyah"> Ayah Kandung
-                  <input type="radio" name="StatusAyah" value="ayah" id="StatusAyah"> Ayah</td>
+                  <td><input type="radio" name="StatusAyah" value="ayah_kandung" <?php if($dataAyah->status == 'ayah_kandung') echo "checked='checked'";?> id="StatusAyah"> Ayah Kandung
+                  <input type="radio" name="StatusAyah" value="ayah" <?php if($dataAyah->status == 'ayah') echo "checked='checked'";?> id="StatusAyah"> Ayah</td>
               </tr>
               <tr>
                   <td width="200px">Pendidikan Terakhir</td>
@@ -90,8 +90,8 @@
               </tr>
               <tr>
                   <td>Status</td>
-                  <td><input type="radio" name="StatusIbu" value="ibu_kandung" id="StatusIbu"> Ibu Kandung
-                  <input type="radio" name="StatusIbu" value="ibu" id="StatusIbu"> Ibu</td>
+                  <td><input type="radio" name="StatusIbu" value="ibu_kandung" <?php if($dataIbu->status == 'ibu_kandung') echo "checked='checked'";?> id="StatusIbu" > Ibu Kandung
+                  <input type="radio" name="StatusIbu" value="ibu" <?php if($dataIbu->status == 'ibu') echo "checked='checked'";?> id="StatusIbu"> Ibu</td>
               </tr>
               <tr>
                   <td width="200px">Pendidikan Terakhir</td>

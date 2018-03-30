@@ -12,55 +12,55 @@
               </tr>
               <tr>
                   <td height="50px">Penyakit Jantung</td>
-                  <td><input type="radio" name="jantung" id="jantung" value="ya"> Ya
-                  <input type="radio" name="jantung" id="jantung" value="tidak"> Tidak</td>
+                  <td><input type="radio" name="jantung" id="jantung" value="ya" <?php if($dataKesehatan->penyakit_jantung == 'ya') echo "checked='checked'";?>> Ya
+                  <input type="radio" name="jantung" id="jantung" value="tidak" <?php if($dataKesehatan->penyakit_jantung == 'tidak') echo "checked='checked'";?>> Tidak</td>
               </tr>
               <tr>
                   <td height="50px">Penyakit Kanker</td>
-                  <td><input type="radio" name="kanker" id="kanker" value="ya"> Ya
-                  <input type="radio" name="kanker" id="kanker" value="tidak"> Tidak</td>
+                  <td><input type="radio" name="kanker" id="kanker" value="ya" <?php if($dataKesehatan->penyakit_kanker == 'ya') echo "checked='checked'";?>> Ya
+                  <input type="radio" name="kanker" id="kanker" value="tidak" <?php if($dataKesehatan->penyakit_kanker == 'tidak') echo "checked='checked'";?>> Tidak</td>
               </tr>
               <tr>
                   <td width="350px" height="50px">Penyakit Kelainan Psikologis</td>
-                  <td><input type="radio" name="kelainanPsikologis" id="kelainanPsikologis" value="Ya"> Ya
-                  <input type="radio" name="kelainanPsikologis" id="kelainanPsikologis" value="Tidak"> Tidak</td>
+                  <td><input type="radio" name="kelainanPsikologis" id="kelainanPsikologis" value="Ya" <?php if($dataKesehatan->penyakit_kelainan_psikologis == 'ya') echo "checked='checked'";?>> Ya
+                  <input type="radio" name="kelainanPsikologis" id="kelainanPsikologis" value="Tidak" <?php if($dataKesehatan->penyakit_kelainan_psikologis == 'Tidak') echo "checked='checked'";?>> Tidak</td>
               </tr>
               <tr>
                   <td height="50px">Kelainan Saraf</td>
-                  <td><input type="radio" name="kelainanSaraf" id="kelainanSaraf" value="Ya"> Ya
-                  <input type="radio" name="kelainanSaraf" id="kelainanSaraf" value="Tidak"> Tidak</td>
+                  <td><input type="radio" name="kelainanSaraf" id="kelainanSaraf" value="Ya" <?php if($dataKesehatan->kelainan_saraf == 'ya') echo "checked='checked'";?>> Ya
+                  <input type="radio" name="kelainanSaraf" id="kelainanSaraf" value="Tidak" <?php if($dataKesehatan->kelainan_saraf == 'Tidak') echo "checked='checked'";?>> Tidak</td>
               </tr>
               <tr>
                   <td height="50px">Kelainan Darah</td>
-                  <td><input type="radio" name="kelainanDarah" id="kelainanDarah" value="Ya"> Ya
-                  <input type="radio" name="kelainanDarah" id="kelainanDarah" value="Tidak"> Tidak</td>
+                  <td><input type="radio" name="kelainanDarah" id="kelainanDarah" value="Ya" <?php if($dataKesehatan->kelainan_darah == 'ya') echo "checked='checked'";?>> Ya
+                  <input type="radio" name="kelainanDarah" id="kelainanDarah" value="Tidak" <?php if($dataKesehatan->kelainan_darah == 'Tidak') echo "checked='checked'";?>> Tidak</td>
               </tr>
               <tr>
                   <td height="50px">Pernah Operasi</td>
-                  <td><input type="radio" name="operasi" id="operasi" value="Ya"> Ya
-                  <input type="radio" name="operasi" id="operasi" value="Tidak"> Tidak</td>
+                  <td><input type="radio" name="operasi" id="operasi" value="Ya" <?php if($dataKesehatan->pernah_operasi == 'ya') echo "checked='checked'";?>> Ya
+                  <input type="radio" name="operasi" id="operasi" value="Tidak" <?php if($dataKesehatan->pernah_operasi == 'Tidak') echo "checked='checked'";?>> Tidak</td>
               </tr>
               <tr>
                   <td width="150px" height="50px">Masa pengobatan</td>
-                  <td><input type="radio" name="masaPengobatan" id="masaPengobatan" value="Ya"> Ya
-                  <input type="radio" name="masaPengobatan" id="masaPengobatan" value="Tidak"> Tidak</td>
+                  <td><input type="radio" name="masaPengobatan" id="masaPengobatan" value="Ya" <?php if($dataKesehatan->masa_pengobatan == 'ya') echo "checked='checked'";?>> Ya
+                  <input type="radio" name="masaPengobatan" id="masaPengobatan" value="Tidak" <?php if($dataKesehatan->masa_pengobatan == 'Tidak') echo "checked='checked'";?>> Tidak</td>
               </tr>
               <tr>
                   <td height="50px">Bantuan Medis</td>
-                  <td><input type="radio" name="bantuanMedis" id="bantuanMedis" value="Ya"> Ya
-                  <input type="radio" name="bantuanMedis" id="bantuanMedis" value="Tidak"> Tidak</td>
+                  <td><input type="radio" name="bantuanMedis" id="bantuanMedis" value="Ya" <?php if($dataKesehatan->bantuan_medis == 'ya') echo "checked='checked'";?>> Ya
+                  <input type="radio" name="bantuanMedis" id="bantuanMedis" value="Tidak" <?php if($dataKesehatan->bantuan_medis == 'Tidak') echo "checked='checked'";?>> Tidak</td>
               </tr>
               <tr>
                   <td height="50px">Perhatian Fisik</td>
-                  <td><input type="radio" name="perhatianFisik" id="perhatianFisik" value="Ya"> Ya
-                  <input type="radio" name="perhatianFisik" id="perhatianFisik" value="Tidak"> Tidak</td>
+                  <td><input type="radio" name="perhatianFisik" id="perhatianFisik" value="Ya" <?php if($dataKesehatan->perhatian_fisik == 'ya') echo "checked='checked'";?>> Ya
+                  <input type="radio" name="perhatianFisik" id="perhatianFisik" value="Tidak" <?php if($dataKesehatan->perhatian_fisik == 'Tidak') echo "checked='checked'";?>> Tidak</td>
               </tr>
               <tr>
                   <td>
                   <a href="<?php echo base_url();?>Daftar/dataOrangTua/<?php echo $nisn?>"><button type="button" class="btn btn-primary" style=" margin-bottom:  200px; margin-top: 40px; margin-right:0px;">Kembali</button></a>
                   </td>
                   <td >
-                  <button type="submit" class="btn btn-success" id="dataKesehatan" style=" margin-bottom:  200px; margin-top: 40px;margin-left:0px;">Lanjut</button>
+                  <button type="submit" class="btn btn-success" style=" margin-bottom:  200px; margin-top: 40px;margin-left:-200px;">Lanjut</button>
                 </td>
               </tr>
               </tr>
@@ -79,7 +79,7 @@
           e.preventDefault();
           var postData = {
                                   "nisn"                    : "<?php echo $nisn ?>",
-                                  "nama_dokter"             : $("#namaAyah").val(),
+                                  "nama_dokter"             : $("#nama_dokter").val(),
                                   "rumahsakit"              : $("#rumahsakit").val(),
                                   "jantung"                 : $("#jantung").val(),
                                   "kanker"                  : $("#kanker").val(),
@@ -97,7 +97,7 @@
           $.ajax({
                                 type  : "post",
                                 dataType: "json",
-                                url   : "<?php echo base_url();?>Daftar/prosesDataKesehatan",
+                                url   : "<?php echo base_url()?>Daftar/prosesDataKesehatan",
                                 data  : {myData : dataString},
                          beforeSubmit : function(data){ },
                               success : function(data){
